@@ -7,7 +7,7 @@
 fork(gist, ...)
 }
 \arguments{
-\item{gist}{A gist object or something coerceable to a gist}
+\item{gist}{A gist object or something coercible to a gist}
 
 \item{...}{Further named args to \code{\link[httr]{GET}}}
 }

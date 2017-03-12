@@ -1,7 +1,7 @@
 #' List forks on a gist
 #'
 #' @export
-#' @param gist A gist object or something coerceable to a gist
+#' @param gist A gist object or something coercible to a gist
 #' @param page (integer) Page number to return.
 #' @param per_page (integer) Number of items to return per page. Default 30. Max 100.
 #' @param ... Further named args to \code{\link[httr]{GET}}
@@ -9,9 +9,9 @@
 #' @examples \dontrun{
 #' gist(id='1642874') %>% forks(per_page=2)
 #' gist(id = "8172796") %>% forks()
-#' 
+#'
 #' # pass in a url
-#' gist("https://gist.github.com/expersso/4ac33b9c00751fddc7f8") %>% forks 
+#' gist("https://gist.github.com/expersso/4ac33b9c00751fddc7f8") %>% forks
 #' }
 
 forks <- function(gist, page=NULL, per_page=30, ...) {
@@ -25,7 +25,7 @@ forks <- function(gist, page=NULL, per_page=30, ...) {
 #' Fork a gist
 #'
 #' @export
-#' @param gist A gist object or something coerceable to a gist
+#' @param gist A gist object or something coercible to a gist
 #' @param ... Further named args to \code{\link[httr]{GET}}
 #' @return A gist class object
 #' @examples \dontrun{

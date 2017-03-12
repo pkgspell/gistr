@@ -35,9 +35,9 @@ or \code{\link[rmarkdown]{render}}}
 \item{include_source}{(logical) Only applies if \code{knit=TRUE}. Include source file in the
 gist in addition to the knitted output.}
 
-\item{artifacts}{(logical/character) Include artifacts or not. If \code{TRUE}, 
-includes all artifacts. Or you can pass in a file extension to only upload 
-artifacts of certain file exensions. Default: \code{FALSE}}
+\item{artifacts}{(logical/character) Include artifacts or not. If \code{TRUE},
+includes all artifacts. Or you can pass in a file extension to only upload
+artifacts of certain file extensions. Default: \code{FALSE}}
 
 \item{imgur_inject}{(logical) Inject \code{\link[knitr]{imgur_upload}} into your
 \code{.Rmd} file to upload files to \url{http://imgur.com/}. This will be ignored 
@@ -47,7 +47,7 @@ anyway. Default: FALSE}
 \item{git_method}{(character) One of ssh (default) or https. If a remote already
 exists, we use that remote, and this parameter is ignored.}
 
-\item{sleep}{(integer) Seconds to sleep after creating gist, but before 
+\item{sleep}{(integer) Seconds to sleep after creating gist, but before
 collecting metadata on the gist. If uploading a lot of stuff, you may want to
 set this to a higher value, otherwise, you may not get accurate metadata for
 your gist. You can of course always refresh afterwards by calling \code{gist}
@@ -59,19 +59,19 @@ with your gist id.}
 Create a gist via git instead of the GitHub Gists HTTP API
 }
 \details{
-Note that when \code{browse=TRUE} there is a slight delay in when 
-we open up the gist in your default browser and when the data will display 
-in the gist. We could have this function sleep a while and guess when it 
+Note that when \code{browse=TRUE} there is a slight delay in when
+we open up the gist in your default browser and when the data will display
+in the gist. We could have this function sleep a while and guess when it
 will be ready, but instead we open your gist right after we're done sending
-the data to GitHub. Make sure to refresh the page if you don't see your 
+the data to GitHub. Make sure to refresh the page if you don't see your
 content right away.
 
-Likewise, the object that is returned from this function call may not have 
-the updated and correct file information. You can retrieve that easily by 
-calling \code{\link{gist}} with the gist id. 
+Likewise, the object that is returned from this function call may not have
+the updated and correct file information. You can retrieve that easily by
+calling \code{\link{gist}} with the gist id.
 
 This function uses git instead of the HTTP API, and thus requires
-the R package \code{git2r}. If you don't have \code{git2r} installed, and 
+the R package \code{git2r}. If you don't have \code{git2r} installed, and
 try to use this function, it will stop and tell you to install \code{git2r}.
 
 This function using git is better suited than \code{\link{gist_create}}
@@ -82,15 +82,15 @@ for use cases involving:
  git we can get around that limit.
  \item Binary files - Often artifacts created are binary files like \code{.png}.
  The GitHub API doesn't allow transport of binary files, but we can do that with
- git. 
+ git.
 }
 
 Another difference between this function and \code{\link{gist_create}} is that
 this function can collect all artifacts coming out of a knit process.
 
 If a gist is somehow deleted, or the remote changes, when you try to push to the
-same gist again, everything should be fine. We now use \code{tryCatch} on the 
-push attempt, and if it fails, we'll add a new remote (which means a new gist), 
+same gist again, everything should be fine. We now use \code{tryCatch} on the
+push attempt, and if it fails, we'll add a new remote (which means a new gist),
 and push again.
 }
 \examples{
@@ -143,7 +143,7 @@ unlink("~/gitgist6", recursive = TRUE)
 dir.create("~/gitgist6")
 file.copy(arts, "~/gitgist6/")
 list.files("~/gitgist6")
-gist_create_git("~/gitgist6/artifacts_eg1.Rmd", knit = TRUE, 
+gist_create_git("~/gitgist6/artifacts_eg1.Rmd", knit = TRUE,
    artifacts = TRUE)
 
 # from a code block

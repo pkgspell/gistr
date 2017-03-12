@@ -7,7 +7,7 @@
 update(gist, description = gist$description, ...)
 }
 \arguments{
-\item{gist}{A gist object or something coerceable to a gist}
+\item{gist}{A gist object or something coercible to a gist}
 
 \item{description}{(character) Brief description of gist (optional)}
 

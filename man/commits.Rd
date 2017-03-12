@@ -7,7 +7,7 @@
 commits(gist, page = NULL, per_page = 30, ...)
 }
 \arguments{
-\item{gist}{A gist object or something coerceable to a gist}
+\item{gist}{A gist object or something coercible to a gist}
 
 \item{page}{(integer) Page number to return.}
 

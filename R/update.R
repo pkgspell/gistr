@@ -1,13 +1,13 @@
 #' Update/modify a gist
 #'
 #' @export
-#' @param gist A gist object or something coerceable to a gist
+#' @param gist A gist object or something coercible to a gist
 #' @param description (character) Brief description of gist (optional)
 #' @template all
 #' @examples \dontrun{
 #' file1 <- system.file("examples", "alm.md", package = "gistr")
 #' file2 <- system.file("examples", "zoo.json", package = "gistr")
-#' 
+#'
 #' # add new files
 #' gists(what = "minepublic")[[3]] %>%
 #'  add_files(file1, file2) %>%
@@ -43,7 +43,7 @@
 #' }
 
 update <- function(gist, description = gist$description, ...) {
-  files <- list(update = gist$update_files, add = gist$add_files, 
+  files <- list(update = gist$update_files, add = gist$add_files,
                 delete = gist$delete_files, rename = gist$rename_files)
   body <- payload(filenames = files, description)
   res <- gist_PATCH(id = gist$id, auth = gist_auth(), headers = ghead(), body, ...)

@@ -3,7 +3,7 @@
 #' @export
 #' @rdname files
 #'
-#' @param gist A gist object or something coerceable to a gist
+#' @param gist A gist object or something coercible to a gist
 #' @template all
 #' @examples \dontrun{
 #' add_files("~/stuff.Rmd")

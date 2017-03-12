@@ -1,19 +1,19 @@
 #' Save gist files to disk
 #'
 #' @export
-#' @param gist A gist object or something coerceable to a gist
-#' @param path Root path to write to, a directory, not a file b/c a gist can contain 
-#' many files. A folder is created with name of the gist id within this root 
+#' @param gist A gist object or something coercible to a gist
+#' @param path Root path to write to, a directory, not a file b/c a gist can contain
+#' many files. A folder is created with name of the gist id within this root
 #' directory.  File names will be the same as given in the gist.
 #' @param x An object of class \code{gist_files} (the output from \code{gist_save})
 #' @return An object of class \code{gist_files}, S3 object containing file paths
-#' @details 
-#' \code{gist_save}: files are written into a new folder, named by the gist id, 
+#' @details
+#' \code{gist_save}: files are written into a new folder, named by the gist id,
 #' e.g., \code{a65ac7e56b7b3f746913}
-#' 
-#' \code{gist_open}: opens files in your editor/R GUI. Internally, uses 
-#' \code{\link{file.edit}} to open files, using \code{getOption("editor")} to 
-#' open the files. If you're in R.app or RStudio, or other IDE's, files will 
+#'
+#' \code{gist_open}: opens files in your editor/R GUI. Internally, uses
+#' \code{\link{file.edit}} to open files, using \code{getOption("editor")} to
+#' open the files. If you're in R.app or RStudio, or other IDE's, files will
 #' open in the IDE (I think).
 #' @examples \dontrun{
 #' gist("a65ac7e56b7b3f746913") %>% gist_save()
@@ -64,6 +64,6 @@ isDir <- function(path) {
   file.info(path)$isdir
 }
 
-is.string <- function(x) { 
+is.string <- function(x) {
   is.character(x) && length(x) == 1
 }
